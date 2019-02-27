@@ -1,0 +1,164 @@
+$width: 100%;
+$font-size: 1.2rem;
+$background : #000;
+$color: #2311;
+$border-style: solid 1px #1231;
+$font: font;
+
+// variaveis numericas:
+
+$width-rem: 3.5rem;
+$width-px: 300px;
+$width: 300;
+$var: 23px;
+// SASS OBEDECE SEMPRE A ULTIMA REGRA ASSIM COMO O CSS
+
+// variaveis strings:
+
+$font: 'Segoe UI Light';
+$fontNegrito: bold;
+
+// variaveis cores:
+
+$color: red;
+$background-color: rgba(0,1,2,0.5);
+$font-color: #ffffff;
+
+// variaveis booleanas:
+
+$color-light: false;
+$color-dark: true;
+$color-dark: null;
+
+//variaveis listas:
+
+$animals: puma, tigre, leao;
+$animals: puma tigre leao;
+$animals: "puma", "tigrea", "leao";
+$margin: 10px 20px 15px 20px;
+
+// variaveis maps:
+
+
+// interpolação:
+
+$name: destaque;
+$attr: border;
+
+// operações:
+
+h1{
+    font-size: 20px + 3;
+    font-weight: 200 * 2;
+}
+p.test{
+    font-size: (-$var);
+}
+p.test2{
+    width: $width/2;
+    font-size: round(1.5)/2;
+}
+p.test3{
+    font-size: $font-size % 2;
+}
+// OBS: na operação, o segundo valor não deve ter unidade!
+
+// color operations(feitas entre pares):
+$color: #010203 + #040506;
+$color: rgba(255, 0, 0,0.75) + rgba(0,255,0,0.75);
+h3{
+    color: $color;
+}
+// string operations
+$value: null;
+p{
+    cursor: e + -resize;
+}
+p:before{
+    content: "Eu tenho #{2+10} moedas."
+}
+p:after{
+    content: "Eu tenho #{$value} moedas."
+}
+//////
+h2{
+    $font-size:20px;
+    $line-height: 30px;
+    font: #{$font-size}/#{$line-height};
+}
+
+nav{
+    width: $width;
+    background-color: $background-color;
+    ul{
+        list-style: none;
+        padding: 20px 0;
+        
+    }
+    
+    li{
+        color: $color;
+        margin: 0 20px;
+        font:{
+            family: 'Segou UI Light';
+            weight: bold;
+            size: 20px;
+        }
+    }
+    a{
+        &:hover{
+            color: black;
+        }
+    }
+    h1{
+        color: $font-color;
+        font-family: $font;
+        font-weight: $fontNegrito;
+    }
+}
+
+section{
+    margin: $margin;
+}
+
+p.#{$name}{
+    #{$attr}-color: blue;
+    
+}
+
+.msg{
+    border: 1px solid;
+    padding: 4px;
+    text-align: center;
+}
+.msg-error{
+    @extend .msg;
+    border-color: black;
+    color: red;
+}
+.msg-alert{
+    @extend .msg;
+    border-color: green;
+    color: hotpink;
+}
+a:hover{
+    text-decoration: underline;
+}
+.hoverlink{
+    @extend a:hover;
+    color:aqua;
+}
+.error{
+    border: 1px yellow;
+    background-color: aquamarine;
+}
+.attention{
+    font-size: 3em;
+    background-color: brown;
+}
+.seriousError{
+    @extend .error;
+    @extend .attention;
+    border-width: orange;
+    
+}

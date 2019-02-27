@@ -1,0 +1,83 @@
+h1 {
+  font-size: 23px;
+  font-weight: 400; }
+
+p.test {
+  font-size: -23px; }
+
+p.test2 {
+  width: 150;
+  font-size: 1; }
+
+p.test3 {
+  font-size: 1.2rem; }
+
+h3 {
+  color: rgba(255, 255, 0, 0.75); }
+
+p {
+  cursor: e-resize; }
+
+p:before {
+  content: "Eu tenho 12 moedas."; }
+
+p:after {
+  content: "Eu tenho  moedas."; }
+
+h2 {
+  font: 20px/30px; }
+
+nav {
+  width: 300;
+  background-color: rgba(0, 1, 2, 0.5); }
+  nav ul {
+    list-style: none;
+    padding: 20px 0; }
+  nav li {
+    color: rgba(255, 255, 0, 0.75);
+    margin: 0 20px;
+    font-family: 'Segou UI Light';
+    font-weight: bold;
+    font-size: 20px; }
+  nav a:hover, nav .hoverlink {
+    color: black; }
+  nav h1 {
+    color: #ffffff;
+    font-family: "Segoe UI Light";
+    font-weight: bold; }
+
+section {
+  margin: 10px 20px 15px 20px; }
+
+p.destaque {
+  border-color: blue; }
+
+.msg, .msg-error, .msg-alert {
+  border: 1px solid;
+  padding: 4px;
+  text-align: center; }
+
+.msg-error {
+  border-color: black;
+  color: red; }
+
+.msg-alert {
+  border-color: green;
+  color: hotpink; }
+
+a:hover, .hoverlink {
+  text-decoration: underline; }
+
+.hoverlink {
+  color: aqua; }
+
+.error, .seriousError {
+  border: 1px yellow;
+  background-color: aquamarine; }
+
+.attention, .seriousError {
+  font-size: 3em;
+  background-color: brown; }
+
+.seriousError {
+  border-width: orange; }
