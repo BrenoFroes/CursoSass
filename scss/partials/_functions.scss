@@ -1,0 +1,105 @@
+// funções
+
+body{
+    background: rgb($red, $green, $blue);
+}
+section{
+    background: rgba($red, $green, $blue, $alpha);
+}
+section div{
+    background: ligthen($color, $amount);
+    background: darken($color, $amount);
+    font-family: quote($font);
+    font-weight: unquote($weight);
+    padding: str-length($weight);
+    font-family: to-upper-case($weight);
+    font-family: to-lower-case($weight);
+    width: percentage(str-length($weight));
+    margin: round($real_round);
+    margin: ceil($real);
+    margin: floor($real);
+}
+// função criada:
+
+@function calc-fluid ($target, $container){
+    @return ($target/$container) * 100%;
+}
+// usar função criada:
+
+div {
+    width: calc-fluid(400, 1000);
+}
+// placeholders(usados para reaproveitar blocos ESTÁTICOS de estilos):
+
+%center{
+    display: block;
+    margin: 0 auto;
+}
+
+div.inicial{
+    @extend %center;
+}
+
+
+// condições:
+
+$template: dark;
+header{
+    @if($template == dark){
+        color: #fff;
+        background: color;
+    }
+    @else if ($template == light){
+        color: #333;
+        background-color: #333;
+    }
+    @else if ($template == sea){
+        color: #1a8acd;
+        background: #b1d3ff;
+    }
+    @else{
+        color: #555;
+        background: #f0f0f0;
+    }
+}
+
+
+// iterações(loops, repetições):
+
+// through(através) -> do valor inicial até o valor igual ao final
+
+@for $i from 1 through 3{
+    .item-#{$i} {
+        width: 2em * $i;
+    }
+}
+// to(para) -> do valor inicial até exatamente o valor menor que o final
+
+@for $i from 1 to 5{
+    h#{$i} {
+        font-size: 2em * $i;
+    }
+}
+// each(cada)
+
+$animals: puma, sea-slug, egret, salamander;
+@each $animal in $animals{
+    .#{$animal}-icon{
+        background-image: url('/images/#{$animal}.png');
+    }
+}
+// while(enquanto)
+
+$i: 6;
+@while $i > 0{
+    .item-#{$i}{
+        width: 2em * $i;
+        
+    }
+    // iteração: 
+    $i: $i - 2;
+}
+
+
+
+

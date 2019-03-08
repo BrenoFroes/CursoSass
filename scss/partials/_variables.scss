@@ -1,0 +1,75 @@
+// variaveis numericas:
+
+$width-rem: 3.5rem;
+$width-px: 300px;
+$width: 300;
+$var: 23px;
+// SASS OBEDECE SEMPRE A ULTIMA REGRA ASSIM COMO O CSS
+
+// variaveis strings:
+
+$font: 'Segoe UI Light';
+$fontNegrito: bold;
+
+// variaveis cores:
+
+$color: red;
+$background-color: rgba(0,1,2,0.5);
+$font-color: #ffffff;
+
+// variaveis booleanas:
+
+$color-light: false;
+$color-dark: true;
+$color-dark: null;
+
+//variaveis listas:
+
+$animals: puma, tigre, leao;
+$animals: puma tigre leao;
+$animals: "puma", "tigrea", "leao";
+$margin: 10px 20px 15px 20px;
+
+
+// interpolação:
+
+$name: destaque;
+$attr: border;
+
+
+// operações:
+
+h1{
+    font-size: 20px + 3;
+    font-weight: 200 * 2;
+}
+p.test{
+    font-size: (-$var);
+}
+p.test2{
+    width: $width/2;
+    font-size: round(1.5)/2;
+}
+p.test3{
+    font-size: $font-size % 2;
+}
+// OBS: na operação, o segundo valor não deve ter unidade!
+
+// color operations(feitas entre pares):
+$color: #010203 + #040506;
+$color: rgba(255, 0, 0,0.75) + rgba(0,255,0,0.75);
+h3{
+    color: $color;
+}
+// string operations
+$value: null;
+p{
+    cursor: e + -resize;
+}
+p:before{
+    content: "Eu tenho #{2+10} moedas."
+}
+p:after{
+    content: "Eu tenho #{$value} moedas."
+}
+

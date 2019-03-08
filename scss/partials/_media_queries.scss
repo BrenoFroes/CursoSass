@@ -1,0 +1,38 @@
+// media(no SASS é usada dentro do seletor)
+
+.sidebar{
+    width: 30%;
+    @media screen and (orientation: landscape){
+        width: 40%;
+    }
+}
+
+// FERRAMENTE PARA ADICIONAR UM ATRIBUTO CSS A UM SELETOR DE ACORDO COM A TELA E RESPONSIVIDADE CORRESPONDENTE
+// media + mixins + interpolation + content
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin landscape{
+    @media screen and (orientation: landscape){
+        @content;
+    }
+}
+@mixin tablet{
+    @media (min-width: #{$tablet-width}){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width: #{$desktop-width}){
+        @content;
+    }
+}
+
+// utilizando a ferramenta
+header {
+    padding: 3em;
+    @include tablet{
+        padding: 2em;
+    }
+}
